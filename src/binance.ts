@@ -1,3 +1,3 @@
-window.addEventListener("click", () => {
-  console.log("test");
+document.addEventListener("click", (event) => {
+  console.log(event.target);
 });
