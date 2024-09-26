@@ -1,0 +1,32 @@
+{
+  "name": "tcode",
+  "description": "tcode bitches",
+  "type": "module",
+  "main": "",
+  "module": "",
+  "exports": {
+    ".": {}
+  },
+  "types": "",
+  "scripts": {
+    "build": "wireit"
+  },
+  "files": [],
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "wireit": "^0.14.9"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "tsconfig.json",
+        "src"
+      ],
+      "output": [
+        "lib"
+      ]
+    }
+  }
+}
