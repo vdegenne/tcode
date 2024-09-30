@@ -1,12 +1,15 @@
 {
-  "manifest_version": 3,
-  "name": "tcode",
-  "version": "1.0",
-  "content_scripts": [
-    {
-      "matches": ["*://*.binance.com/*"],
-      "js": ["lib/binance.js"]
-    }
-  ],
-  "permissions": []
+	"manifest_version": 3,
+	"name": "tcode",
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"matches": ["*://*.binance.com/*"],
+			"js": [
+				"./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+				"./lib/binance.js"
+			]
+		}
+	],
+	"permissions": []
 }
