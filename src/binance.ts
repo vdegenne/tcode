@@ -70,6 +70,20 @@ function breakDownStrip(strip: HTMLElement) {
 
 document.addEventListener('click', (event) => {
 	const target = event.target as HTMLElement;
+	target.dispatchEvent(new CustomEvent('copy-t-code'));
+});
+
+declare global {
+	interface WindowEventMap {
+		'copy-t-code': CustomEvent;
+	}
+	interface DocumentEventMap {
+		'copy-t-code': CustomEvent;
+	}
+}
+
+document.addEventListener('copy-t-code', (event: CustomEvent) => {
+	const target = event.target as HTMLElement;
 	const strip = getStrip(target);
 	if (strip) {
 		const p = breakDownStrip(strip);
