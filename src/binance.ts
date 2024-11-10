@@ -13,7 +13,10 @@ interface StripInfo {
 	status: 'filled';
 }
 function getStrip(element: HTMLElement) {
-	return element.closest<HTMLElement>('.css-1yensx3,.css-1j3n31m');
+	// return element.closest<HTMLElement>('.css-1yensx3,.css-1j3n31m');
+	return element
+		.closest('.css-19qmjuh')
+		?.querySelector(':scope > div > div') as HTMLElement;
 }
 
 /**
@@ -70,7 +73,7 @@ function breakDownStrip(strip: HTMLElement) {
 
 document.addEventListener('click', (event) => {
 	const target = event.target as HTMLElement;
-	target.dispatchEvent(new CustomEvent('copy-t-code'));
+	target.dispatchEvent(new CustomEvent('copy-t-code', {bubbles: true}));
 });
 
 declare global {
