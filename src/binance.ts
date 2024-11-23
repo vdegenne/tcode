@@ -49,7 +49,7 @@ function breakDownStrip(strip: HTMLElement) {
 		_13,
 		status,
 	] = [...strip.querySelectorAll(':scope > div')].map((el) => {
-		const content = el.textContent!.trim();
+		const content = el.textContent!.replace(',', '').trim();
 		const num = number(content);
 		if (num) {
 			return num;
@@ -90,7 +90,7 @@ document.addEventListener('copy-t-code', (event: CustomEvent) => {
 	const strip = getStrip(target);
 	if (strip) {
 		const p = breakDownStrip(strip);
-		const tcode = `binance:${p.pair.replace('/', ':')}:${p.side}:${p.price}:${p.amount}`;
+		const tcode = `binance:${p.pair.replace('/', ':')}:${p.side}:${p.average}:${p.amount}`;
 		copyToClipboard(tcode);
 	}
 });
