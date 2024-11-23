@@ -15,7 +15,7 @@ interface StripInfo {
 function getStrip(element: HTMLElement) {
 	// return element.closest<HTMLElement>('.css-1yensx3,.css-1j3n31m');
 	return element
-		.closest('.css-19qmjuh')
+		.closest('.css-19qmjuh,.css-xfoack')
 		?.querySelector(':scope > div > div') as HTMLElement;
 }
 
